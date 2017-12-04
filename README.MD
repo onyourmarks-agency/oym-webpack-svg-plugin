@@ -19,8 +19,12 @@ module.exports = {
     // ...
     plugins: [
         new SvgPlugin(paths.SVG, {
-            extension: '.twig',
-            outputPath: 'path/to/svg'
+            mode: {
+                symbol: {
+                    inline: true,
+                },
+            },
+            dest: paths.DIST_PRIVATE + '/svg'
         }),
     ]
 };
