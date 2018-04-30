@@ -12,35 +12,42 @@ const mkdirp = require('mkdirp');
  * @constructor
  */
 const WebpackSvgStore = function (inputPath, options) {
-    this.inputPath = inputPath;
-    this.spriter = new SVGSpriter(options);
+  this.inputPath = inputPath;
+  this.spriter = new SVGSpriter(options);
 };
 
 /**
  * @param compiler
  */
 WebpackSvgStore.prototype.apply = function (compiler) {
-    let that = this;
+  let that = this;
 
-    compiler.plugin('emit', function (compilation, callback) {
-        glob(that.inputPath + '/**/*.svg', function (err, files) {
-            for (let fileKey in files) {
-                that.spriter.add(files[fileKey], null, fs.readFileSync(files[fileKey], {encoding: 'utf-8'}));
-                compilation.fileDependencies.push(files[fileKey]);
-            }
+  compiler.plugin('emit', function (compilation, callback) {
+    glob(that.inputPath + '/**/*.svg', function (err, files) {
+      for (let fileKey in files) {
+        that.spriter.add(files[fileKey], null, fs.readFileSync(files[fileKey], {encoding: 'utf-8'}));
+        compilation.fileDependencies.push(files[fileKey]);
 
-            that.spriter.compile(function(error, result) {
-                for (let mode in result) {
-                    for (let resource in result[mode]) {
-                        mkdirp.sync(path.dirname(result[mode][resource].path));
-                        fs.writeFileSync(result[mode][resource].path, result[mode][resource].contents);
-                    }
-                }
+        let file = files[fileKey];
+        if (compilation.fileDependencies.add) {
+          compilation.fileDependencies.add(file);
+        } else {
+          compilation.fileDependencies.push(file);
+        }
+      }
 
-                callback();
-            });
-        });
+      that.spriter.compile(function (error, result) {
+        for (let mode in result) {
+          for (let resource in result[mode]) {
+            mkdirp.sync(path.dirname(result[mode][resource].path));
+            fs.writeFileSync(result[mode][resource].path, result[mode][resource].contents);
+          }
+        }
+
+        callback();
+      });
     });
+  });
 };
 
 /**
