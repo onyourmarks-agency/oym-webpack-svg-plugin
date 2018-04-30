@@ -26,7 +26,6 @@ WebpackSvgStore.prototype.apply = function (compiler) {
     glob(that.inputPath + '/**/*.svg', function (err, files) {
       for (let fileKey in files) {
         that.spriter.add(files[fileKey], null, fs.readFileSync(files[fileKey], {encoding: 'utf-8'}));
-        compilation.fileDependencies.push(files[fileKey]);
 
         let file = files[fileKey];
         if (compilation.fileDependencies.add) {
