@@ -22,7 +22,9 @@ const WebpackSvgStore = function (inputPath, options) {
 WebpackSvgStore.prototype.apply = function (compiler) {
   let that = this;
 
-  compiler.plugin('emit', function (compilation, callback) {
+  compiler.hooks.emit.tapAsync(
+    'tde-webpack-svg-plugin',
+    function (compilation, callback) {
     glob(that.inputPath + '/**/*.svg', function (err, files) {
       for (let fileKey in files) {
         that.spriter.add(files[fileKey], null, fs.readFileSync(files[fileKey], {encoding: 'utf-8'}));
