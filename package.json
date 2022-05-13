@@ -1,6 +1,6 @@
 {
   "name": "tde-webpack-svg-plugin",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Webpack SVG plugin for converting single SVG files to a sprite",
   "main": "index.js",
   "repository": "https://github.com/tdeNL/tde-webpack-svg-plugin",
