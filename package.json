@@ -1,5 +1,5 @@
 {
-  "name": "oym/webpack-svg-plugin",
+  "name": "@onyourmarks/webpack-svg-plugin",
   "files": [
     "dist/*"
   ],
