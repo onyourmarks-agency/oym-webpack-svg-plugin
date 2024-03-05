@@ -1,5 +1,5 @@
 {
-  "name": "oym-webpack-svg-plugin",
+  "name": "oym/webpack-svg-plugin",
   "files": [
     "dist/*"
   ],
