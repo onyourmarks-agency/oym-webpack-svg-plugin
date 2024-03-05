@@ -1,3 +1,7 @@
-node_modules
+.idea/
 .DS_Store
-yarn.lock
+/node_modules
+svelte-
+.pnpm-debug.log
+.stylelintcache
+.eslintcache

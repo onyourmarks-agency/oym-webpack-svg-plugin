@@ -1,0 +1,3 @@
+src/js/**/*.d.ts
+src/js/**/*.js
+dist/*

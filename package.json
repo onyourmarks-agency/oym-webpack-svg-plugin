@@ -1,20 +1,37 @@
 {
-  "name": "tde-webpack-svg-plugin",
-  "version": "3.0.0",
-  "description": "Webpack SVG plugin for converting single SVG files to a sprite",
-  "main": "index.js",
-  "repository": "https://github.com/tdeNL/tde-webpack-svg-plugin",
-  "author": "Jordi Kroon <jkroon@tde.nl>",
+  "name": "oym-webpack-svg-plugin",
+  "files": [
+    "dist/*"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "license": "MIT",
-  "engines": {
-    "node": ">=14"
+  "repository": "onyourmarks-agency/oym-webpack-svg-plugin",
+  "author": {
+    "name": "On Your Marks",
+    "email": "hosting@onyourmarks.agency",
+    "url": "https://www.onyourmarks.agency/"
+  },
+  "scripts": {
+    "eslint": "eslint src --cache --ext .js,.ts",
+    "build":  "tsc"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.4",
+    "@types/svg-sprite": "^0.0.38",
+    "@typescript-eslint/eslint-plugin": "^6.7.5",
+    "@typescript-eslint/parser": "^6.7.5",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.51.0",
+    "tslib": "^2.6.2",
+    "typescript": "^5.2.2"
   },
   "peerDependencies": {
     "webpack": "5"
   },
   "dependencies": {
-    "glob": "^7.1.6",
-    "mkdirp": "^0.5.1",
-    "svg-sprite": "^1.5.0"
+    "glob": "^10.3.10",
+    "mkdirp": "^3.0.1",
+    "svg-sprite": "^2.0.3"
   }
 }

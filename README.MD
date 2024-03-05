@@ -1,11 +1,11 @@
-# TDE Webpack SVG Plugin 
+# OYM Webpack SVG Plugin 
 
 Webpack plugin for converting SVG files to HTML
 
 ## Install
 
 ```bash
-npm install --save-dev tde-webpack-svg-plugin
+npm install --save-dev oym-webpack-svg-plugin
 ```
 
 ## Usage
@@ -13,7 +13,7 @@ npm install --save-dev tde-webpack-svg-plugin
 In your `webpack.config.js`
 
 ```javascript
-var SvgPlugin = require('tde-webpack-svg-plugin');
+var SvgPlugin = require('oym-webpack-svg-plugin');
 
 module.exports = {
     // ...
@@ -56,4 +56,4 @@ See https://github.com/jkphl/svg-sprite/blob/master/docs/configuration.md
 
 ## License
 
-MIT © [TDE](https://github.com/tdeNL)
+MIT © [On Your Marks](https://github.com/onyourmarks.agency)
