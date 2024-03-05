@@ -14,11 +14,10 @@
   },
   "scripts": {
     "eslint": "eslint src --cache --ext .js,.ts",
-    "build":  "tsc"
+    "build": "tsc"
   },
   "devDependencies": {
     "@types/node": "^20.8.4",
-    "@types/svg-sprite": "^0.0.38",
     "@typescript-eslint/eslint-plugin": "^6.7.5",
     "@typescript-eslint/parser": "^6.7.5",
     "autoprefixer": "^10.4.16",
@@ -30,6 +29,7 @@
     "webpack": "5"
   },
   "dependencies": {
+    "@types/svg-sprite": "^0.0.38",
     "glob": "^10.3.10",
     "mkdirp": "^3.0.1",
     "svg-sprite": "^2.0.3"
