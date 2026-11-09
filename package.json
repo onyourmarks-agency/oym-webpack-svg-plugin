@@ -13,26 +13,29 @@
     "email": "hosting@onyourmarks.agency",
     "url": "https://www.onyourmarks.agency/"
   },
+  "engines": {
+    "node": ">=24"
+  },
   "scripts": {
-    "eslint": "eslint src --cache --ext .js,.ts",
+    "eslint": "eslint src --cache",
     "build": "tsc"
   },
   "devDependencies": {
-    "@types/node": "^20.8.4",
-    "@typescript-eslint/eslint-plugin": "^6.7.5",
-    "@typescript-eslint/parser": "^6.7.5",
-    "autoprefixer": "^10.4.16",
-    "eslint": "^8.51.0",
-    "tslib": "^2.6.2",
-    "typescript": "^5.2.2"
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^24.19.2",
+    "autoprefixer": "^10.6.2",
+    "eslint": "^10.14.0",
+    "tslib": "^2.9.1",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.72.1"
   },
   "peerDependencies": {
     "webpack": "5"
   },
   "dependencies": {
-    "@types/svg-sprite": "^0.0.38",
-    "glob": "^10.3.10",
+    "@types/svg-sprite": "^0.0.39",
+    "glob": "^14.0.4",
     "mkdirp": "^3.0.1",
-    "svg-sprite": "^2.0.3"
+    "svg-sprite": "^2.0.4"
   }
 }

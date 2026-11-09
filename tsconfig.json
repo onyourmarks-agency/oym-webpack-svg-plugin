@@ -12,7 +12,11 @@
 		"module": "commonjs",
 		"noImplicitAny": false,
 		"outDir": "./dist",
+		"rootDir": "./src/js",
 		"target": "esnext",
+		"types": [
+			"node"
+		],
 		"typeRoots": [
 			"./node_modules/@types",
 			"./src/@types"
@@ -21,7 +25,6 @@
 		"sourceMap": true,
 		"strict": true,
 		"verbatimModuleSyntax": false,
-		"ignoreDeprecations": "5.0",
 	},
 	"include": [
 		"./src/**/*"
